@@ -2,7 +2,7 @@
   "generator-jhipster": {
     "applicationType": "monolith",
     "authenticationType": "jwt",
-    "baseName": "TodoList3",
+    "baseName": "TodoList",
     "blueprints": [],
     "buildTool": "maven",
     "cacheProvider": "ehcache",
@@ -11,8 +11,6 @@
     "clientTheme": "flatly",
     "clientThemeVariant": "primary",
     "creationTimestamp": 1676644657249,
-    "cypressAudit": true,
-    "cypressCoverage": null,
     "databaseType": "sql",
     "devDatabaseType": "h2Disk",
     "devServerPort": 9060,
@@ -40,7 +38,7 @@
     "skipFakeData": false,
     "skipServer": true,
     "skipUserManagement": false,
-    "testFrameworks": ["cypress"],
+    "testFrameworks": [],
     "websocket": false,
     "withAdminUi": false
   }
