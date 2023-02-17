@@ -9,8 +9,8 @@ interface TodoListProps {
 
 export function TodoList({ list }: TodoListProps) {
   return (
-    <section id="todoList" className="w-100">
-      <Table hoverable striped>
+    <section id="todoList" className="container">
+      <Table hoverable>
         <Table.Head>
           <Table.HeadCell>Task</Table.HeadCell>
           <Table.HeadCell>
