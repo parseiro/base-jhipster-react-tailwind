@@ -6,7 +6,7 @@ interface IProps {
 }
 
 export default function Item({ content }: IProps) {
-  return <div className="Item">{content}</div>;
+  return <>{content}</>;
 }
 
 Item.propTypes = {

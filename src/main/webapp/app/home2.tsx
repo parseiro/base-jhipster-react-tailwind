@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './app.scss';
 import { Spinner, Toast } from 'flowbite-react';
-import PropTypes from 'prop-types';
-import Item from 'app/modules/home/Item';
 import InputTodo from 'app/modules/home/InputTodo';
 import { HiX } from 'react-icons/hi';
+import { TodoList } from 'app/todoList';
 
 function restaurarTarefas() {
   const tarefasJson = localStorage.getItem('tarefas') || '[]';
@@ -15,26 +14,6 @@ function salvarTarefas(tarefas: string[]) {
   const json = JSON.stringify(tarefas);
   localStorage.setItem('tarefas', json);
 }
-
-interface TodoListProps {
-  list: string[];
-}
-
-function TodoList({ list }: TodoListProps) {
-  return (
-    <ul id="todoList">
-      {list.map((todo: string) => (
-        <li key={todo}>
-          <Item content={todo} />
-        </li>
-      ))}
-    </ul>
-  );
-}
-
-TodoList.propTypes = {
-  list: PropTypes.arrayOf(PropTypes.string).isRequired,
-};
 
 export default function Home2() {
   const [listTodo, setListTodo] = useState<Array<string>>([]);
@@ -75,7 +54,7 @@ export default function Home2() {
   }
 
   return (
-    <main>
+    <main className="flex flex-col items-center">
       <InputTodo addTodo={(todo: string) => addTodo(todo)} />
       {isLoading && (
         <p className="flex align-items gap-5">

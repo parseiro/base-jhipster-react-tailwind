@@ -17,7 +17,7 @@ export default function InputTodo({ addTodo }: IProps) {
   return (
     <section>
       <form
-        className="flex gap-4 justify-between items-center"
+        className="flex gap-4 justify-center items-center"
         onSubmit={e => {
           // console.log('onSubmit');
           e.preventDefault();
