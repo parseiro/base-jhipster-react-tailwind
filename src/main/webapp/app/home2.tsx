@@ -29,12 +29,13 @@ export default function Home2() {
     }, 1000);
   }, []);
 
-  function addTodo(todo: string) {
+  function addTodo(todo: string): Promise<void> {
     const input = todo.trim();
     if (!listTodo.includes(input)) {
       listTodo.push(input);
       salvarTarefas(listTodo);
       setForceUpdate(!forceUpdate);
+      return Promise.resolve();
     } else {
       // console.log('repetido');
       setToast(
@@ -50,6 +51,7 @@ export default function Home2() {
         setToast(<div />);
         // console.log('apagando o toast');
       }, 1000);
+      return Promise.reject();
     }
   }
 
